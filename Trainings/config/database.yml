@@ -10,8 +10,15 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  host: ec2-174-129-208-118.compute-1.amazonaws.com
+  database: d60ob803capksa
+  username: bawctlbqurfpjb
+  password: b5b15dd84bc9e3b64de620b35fc17a4cc987bc7cb2a3bc5ffbde8d4508770c55
+  pool: 10
+  timeout: 30000
+  min_messages: warning
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
