@@ -951,3 +951,198 @@ FOREIGN KEY ("user_id")
   ↳ bin/rails:9
   [1m[35m (74.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/users/sign_up" for ::1 at 2019-08-26 22:43:56 -0600
+  [1m[35m (78.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jroque/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/jroque/.rvm/gems/ruby-2.5.3/gems/devise-4.7.0/app/views/devise/shared/_error_messages.html.erb (1.9ms)
+  Rendered users/shared/_links.html.erb (1.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (243.7ms)
+Completed 200 OK in 754ms (Views: 495.3ms | ActiveRecord: 238.9ms)
+
+
+Started POST "/users" for ::1 at 2019-08-26 22:44:05 -0600
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bS+ghxD3khi8T9GBQYuybt1Tkzzsoy7/wmRC1djU9ieOiYMiVDk7Og1WfHXWQBj7YZoLJJTcytvSO4GkffJnXg==", "user"=>{"email"=>"javier.roque@partnerhero.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "company"=>"1"}, "commit"=>"Sign up"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users/registrations_controller.rb:15:in `create'
+Started GET "/users/sign_up" for ::1 at 2019-08-26 22:45:29 -0600
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/jroque/.rvm/gems/ruby-2.5.3/gems/devise-4.7.0/app/views/devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 345ms (Views: 96.4ms | ActiveRecord: 235.7ms)
+
+
+Started POST "/users" for ::1 at 2019-08-26 22:45:37 -0600
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rDDyE+GsQvQeGzCd2DJvpqCpoHW7yYYYHBt5lS0dBKxPltG2pWLr1q8CnWlP+cUzHGA4bcO2YjwMRLrkiDuV1Q==", "user"=>{"email"=>"javier.roque@partnerhero.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "company"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameters: :email, :password, :password_confirmation
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users/registrations_controller.rb:16:in `create'
+Started GET "/users/sign_up" for ::1 at 2019-08-26 22:46:13 -0600
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/jroque/.rvm/gems/ruby-2.5.3/gems/devise-4.7.0/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 299ms (Views: 45.4ms | ActiveRecord: 240.2ms)
+
+
+Started POST "/users" for ::1 at 2019-08-26 22:46:18 -0600
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sFbnHMaDw713v7cRN7u41Iv6O9rXQTo3RQJRfhuCHPpT8MS5gk1qn8amGuWgcBJBNzOjwq8+3hNVXZIPvqSNgw==", "user"=>{"email"=>"javier.roque@partnerhero.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "company"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameters: :email, :password, :password_confirmation
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Company(#70301806383440) expected, got 1 which is an instance of Integer(#70301753105580)):
+  
+app/controllers/users/registrations_controller.rb:16:in `create'
+Started GET "/users/sign_up" for ::1 at 2019-08-26 22:46:49 -0600
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/jroque/.rvm/gems/ruby-2.5.3/gems/devise-4.7.0/app/views/devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 291ms (Views: 36.4ms | ActiveRecord: 239.2ms)
+
+
+Started POST "/users" for ::1 at 2019-08-26 22:47:00 -0600
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+5pouDWVLyJB+6MoG8YZinbS9r+ji7MaXgpyL8mSp1MYPEsdcVuGAPDiDtyMDbMfyhtup9v0Vz5OVbFebLQ2Kg==", "user"=>{"email"=>"javier.roque@partnerhero.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "company"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameters: :email, :password, :password_confirmation
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Company(#70301797953120) expected, got "1" which is an instance of String(#70301753138740)):
+  
+app/controllers/users/registrations_controller.rb:15:in `create'
+Started POST "/users" for ::1 at 2019-08-26 22:47:58 -0600
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+5pouDWVLyJB+6MoG8YZinbS9r+ji7MaXgpyL8mSp1MYPEsdcVuGAPDiDtyMDbMfyhtup9v0Vz5OVbFebLQ2Kg==", "user"=>{"email"=>"javier.roque@partnerhero.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "company"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameters: :email, :password, :password_confirmation, :company
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+No template found for Users::RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 722ms (ActiveRecord: 242.5ms)
+
+
+  [1m[36mUser Load (78.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/users/sign_up" for ::1 at 2019-08-26 22:49:23 -0600
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/jroque/.rvm/gems/ruby-2.5.3/gems/devise-4.7.0/app/views/devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered users/shared/_links.html.erb (3.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 91ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-08-26 22:50:41 -0600
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/jroque/.rvm/gems/ruby-2.5.3/gems/devise-4.7.0/app/views/devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/registrations/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 386ms (Views: 50.0ms | ActiveRecord: 325.5ms)
+
+
+Started POST "/users" for ::1 at 2019-08-26 22:50:54 -0600
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/PpF1qSBsAQrb3H86G7tkSHjotS1VCtxySKvZIUJ/vEfXGZz4E8ZJpp23Ah/pUcEnSo6zM0rz1XZfWwVIC9viA==", "user"=>{"email"=>"rhet@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "company_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameters: :email, :password, :password_confirmation
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+No template found for Users::RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 486ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-08-26 22:59:56 -0600
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/jroque/.rvm/gems/ruby-2.5.3/gems/devise-4.7.0/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 396ms (Views: 59.6ms | ActiveRecord: 322.8ms)
+
+
+Started POST "/users" for ::1 at 2019-08-26 23:00:10 -0600
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kwBA1d3OqJ981S4e1lGBMtGiEgj55t12PR7xZUG6plpwpmNwmQABvc3Mg+pBmiunbWuKEIGZOVItQTIU5Jw3Iw==", "user"=>{"email"=>"rhet@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "company_id"=>"1"}, "commit"=>"Sign up"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users/registrations_controller.rb:14:in `create'
+Started GET "/users/sign_up" for ::1 at 2019-08-26 23:01:58 -0600
+  [1m[35m (79.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jroque/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/jroque/.rvm/gems/ruby-2.5.3/gems/devise-4.7.0/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (299.4ms)
+Completed 200 OK in 810ms (Views: 538.5ms | ActiveRecord: 245.4ms)
+
+
+Started POST "/users" for ::1 at 2019-08-26 23:02:09 -0600
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YEDZGrDTj3gbjurE2pqk3r0LhcTg/kWfpMNtVp9a2seD5vq/9B0mWqqXRzBNUQ5LAcId3JiBobu0nK4nOnxLvg==", "user"=>{"email"=>"rhet@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "company_id"=>"1"}, "commit"=>"Sign up"}
+  [1m[35m (78.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14
+  [1m[36mUser Exists (85.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rhet@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14
+  [1m[36mCompany Load (77.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14
+  [1m[35m (76.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:14
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/jroque/.rvm/gems/ruby-2.5.3/gems/devise-4.7.0/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/shared/_links.html.erb (2.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 1011ms (Views: 39.3ms | ActiveRecord: 719.4ms)
+
+
+Started POST "/users" for ::1 at 2019-08-26 23:02:25 -0600
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fk9YeDeLGfuzj/L2ZpXjkxUq4HtYEeyB9mbivmQv2P6d6Xvdc0Ww2QKWXwLxXkkGqeN4YyBuCKXmOSHPwQlJhw==", "user"=>{"email"=>"rhet@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "company_id"=>"1"}, "commit"=>"Sign up"}
+  [1m[35m (75.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14
+  [1m[36mUser Exists (79.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rhet@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14
+  [1m[36mCompany Load (78.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14
+  [1m[36mUser Create (84.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "company_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "rhet@gmail.com"], ["encrypted_password", "$2a$11$2zrChw.5VwmAAsgpacTyyejzLZBBiq2Ebxg98PxsoIt6OgnKB2/kW"], ["created_at", "2019-08-27 05:02:25.784687"], ["updated_at", "2019-08-27 05:02:25.784687"], ["company_id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14
+  [1m[35m (78.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:14
+Redirected to http://localhost:3000/
+Completed 302 Found in 702ms (ActiveRecord: 475.5ms)
+
+
+Started GET "/" for ::1 at 2019-08-26 23:02:25 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (77.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/welcome/index.html.erb:3
+  Rendered welcome/index.html.erb within layouts/application (80.3ms)
+Completed 200 OK in 103ms (Views: 21.5ms | ActiveRecord: 77.7ms)
+
+
