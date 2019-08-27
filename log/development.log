@@ -697,3 +697,42 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (75.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (82.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTrainings (20190827025953)
+  [1m[35m (74.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (96.6ms)[0m  [1m[35mCREATE TABLE "trainings" ("id" bigserial primary key, "name" character varying, "company_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_2131102492"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  ↳ db/migrate/20190827025953_create_trainings.rb:3
+  [1m[35m (84.0ms)[0m  [1m[35mCREATE  INDEX  "index_trainings_on_company_id" ON "trainings"  ("company_id")[0m
+  ↳ db/migrate/20190827025953_create_trainings.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (95.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190827025953"]]
+  ↳ bin/rails:9
+  [1m[35m (79.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (88.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (70.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (73.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (79.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (78.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-08-26 21:08:44 -0600
+  [1m[35m (76.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jroque/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (78.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/welcome/index.html.erb:2
+  Rendered welcome/index.html.erb within layouts/application (325.1ms)
+Completed 200 OK in 657ms (Views: 337.1ms | ActiveRecord: 311.1ms)
+
+
