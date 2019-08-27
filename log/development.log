@@ -764,3 +764,31 @@ FOREIGN KEY ("lesson_id")
   ↳ bin/rails:9
   [1m[35m (74.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (77.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (75.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateContentData (20190827040940)
+  [1m[35m (77.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (87.1ms)[0m  [1m[35mCREATE TABLE "content_data" ("id" bigserial primary key, "content_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1896bf3f2c"
+FOREIGN KEY ("content_id")
+  REFERENCES "contents" ("id")
+)[0m
+  ↳ db/migrate/20190827040940_create_content_data.rb:3
+  [1m[35m (78.8ms)[0m  [1m[35mCREATE  INDEX  "index_content_data_on_content_id" ON "content_data"  ("content_id")[0m
+  ↳ db/migrate/20190827040940_create_content_data.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (75.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190827040940"]]
+  ↳ bin/rails:9
+  [1m[35m (77.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (74.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (76.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (76.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (76.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (76.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
