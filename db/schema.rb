@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_040940) do
+ActiveRecord::Schema.define(version: 2019_08_27_041625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,12 +80,83 @@ ActiveRecord::Schema.define(version: 2019_08_27_040940) do
     t.index ["exam_id"], name: "index_questions_on_exam_id"
   end
 
+  create_table "slide_images", force: :cascade do |t|
+    t.string "img_url"
+    t.bigint "slide_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slide_id"], name: "index_slide_images_on_slide_id"
+  end
+
+  create_table "slide_links", force: :cascade do |t|
+    t.string "link_url"
+    t.bigint "slide_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slide_id"], name: "index_slide_links_on_slide_id"
+  end
+
+  create_table "slide_text_fragments", force: :cascade do |t|
+    t.string "text"
+    t.integer "order"
+    t.bigint "slide_text_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slide_text_id"], name: "index_slide_text_fragments_on_slide_text_id"
+  end
+
+  create_table "slide_texts", force: :cascade do |t|
+    t.string "title"
+    t.bigint "slide_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slide_id"], name: "index_slide_texts_on_slide_id"
+  end
+
+  create_table "slide_videos", force: :cascade do |t|
+    t.string "video_url"
+    t.bigint "slide_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slide_id"], name: "index_slide_videos_on_slide_id"
+  end
+
+  create_table "slides", force: :cascade do |t|
+    t.string "img_url"
+    t.bigint "slideshow_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slideshow_id"], name: "index_slides_on_slideshow_id"
+  end
+
+  create_table "slideshows", force: :cascade do |t|
+    t.string "name"
+    t.string "bucket_url"
+    t.string "info_link"
+    t.bigint "content_data_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_data_id"], name: "index_slideshows_on_content_data_id"
+  end
+
   create_table "trainings", force: :cascade do |t|
     t.string "name"
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_trainings_on_company_id"
+  end
+
+  create_table "user_exams", force: :cascade do |t|
+    t.integer "score"
+    t.integer "attempts"
+    t.integer "time"
+    t.bigint "exam_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exam_id"], name: "index_user_exams_on_exam_id"
+    t.index ["user_id"], name: "index_user_exams_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -108,6 +179,15 @@ ActiveRecord::Schema.define(version: 2019_08_27_040940) do
   add_foreign_key "exams", "lessons"
   add_foreign_key "lessons", "trainings"
   add_foreign_key "questions", "exams"
+  add_foreign_key "slide_images", "slides"
+  add_foreign_key "slide_links", "slides"
+  add_foreign_key "slide_text_fragments", "slide_texts"
+  add_foreign_key "slide_texts", "slides"
+  add_foreign_key "slide_videos", "slides"
+  add_foreign_key "slides", "slideshows"
+  add_foreign_key "slideshows", "content_data", column: "content_data_id"
   add_foreign_key "trainings", "companies"
+  add_foreign_key "user_exams", "exams"
+  add_foreign_key "user_exams", "users"
   add_foreign_key "users", "companies"
 end
