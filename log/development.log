@@ -736,3 +736,31 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 657ms (Views: 337.1ms | ActiveRecord: 311.1ms)
 
 
+  [1m[35m (75.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (75.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateContents (20190827040840)
+  [1m[35m (97.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (87.3ms)[0m  [1m[35mCREATE TABLE "contents" ("id" bigserial primary key, "name" character varying, "type" character varying, "difficulty" integer, "order" integer, "lesson_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c301b38676"
+FOREIGN KEY ("lesson_id")
+  REFERENCES "lessons" ("id")
+)[0m
+  ↳ db/migrate/20190827040840_create_contents.rb:3
+  [1m[35m (85.1ms)[0m  [1m[35mCREATE  INDEX  "index_contents_on_lesson_id" ON "contents"  ("lesson_id")[0m
+  ↳ db/migrate/20190827040840_create_contents.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (76.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190827040840"]]
+  ↳ bin/rails:9
+  [1m[35m (76.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (75.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (74.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (77.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (81.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (74.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

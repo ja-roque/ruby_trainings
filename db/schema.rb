@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_025953) do
+ActiveRecord::Schema.define(version: 2019_08_27_040840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.string "answer"
+    t.boolean "correct"
+    t.bigint "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -24,6 +33,44 @@ ActiveRecord::Schema.define(version: 2019_08_27_025953) do
     t.string "website_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.integer "difficulty"
+    t.integer "order"
+    t.bigint "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_contents_on_lesson_id"
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.integer "min_score"
+    t.integer "time_limit"
+    t.bigint "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_exams_on_lesson_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "training_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["training_id"], name: "index_lessons_on_training_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "question"
+    t.bigint "exam_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exam_id"], name: "index_questions_on_exam_id"
   end
 
   create_table "trainings", force: :cascade do |t|
@@ -48,6 +95,11 @@ ActiveRecord::Schema.define(version: 2019_08_27_025953) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "contents", "lessons"
+  add_foreign_key "exams", "lessons"
+  add_foreign_key "lessons", "trainings"
+  add_foreign_key "questions", "exams"
   add_foreign_key "trainings", "companies"
   add_foreign_key "users", "companies"
 end
