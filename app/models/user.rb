@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :company, inverse_of: :users
 
+  validates_presence_of :company
 end
