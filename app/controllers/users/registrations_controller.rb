@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
+  # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -14,18 +14,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
     form_data = params[:user]
 
     # Creating parent company before the user. This is necessary since the user must belong to a company
-    @company = Company.create(:name => form_data[:company])
+    @company = Company.create(name: form_data[:company])
     @company.save
 
     # Now we create the user
-    @user = User.create(:email => form_data[:email], :password => form_data[:password], :password_confirmation => form_data[:password_confirmation], :company_id => @company.id)
+    @user = User.create(email: form_data[:email],
+                        password: form_data[:password],
+                        password_confirmation: form_data[:password_confirmation],
+                        company_id: @company.id)
     @user.save
 
     # Authenticating the user
     sign_in @user
 
     # Default redirect
-    redirect_to "/"
+    redirect_to '/'
   end
 
   # GET /resource/edit
@@ -55,9 +58,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:company])
-  end
+  # def configure_sign_up_params
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:company])
+  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
