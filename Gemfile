@@ -10,6 +10,7 @@ gem 'rails', '~> 5.2.3'
 gem 'pg'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
+gem 'chart-js-rails', '~> 0.0.9'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
