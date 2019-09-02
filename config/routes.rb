@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   scope '/trainings' do
-    get 'new' => 'trainings#new', as: :new_training
+    get 'new' => 'trainings#new', as: :trainings
+    post 'new' => 'trainings#create', as: :create_training
   end
 
   root :to => 'welcome#index'
