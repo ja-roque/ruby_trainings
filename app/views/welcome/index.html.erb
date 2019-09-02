@@ -1,5 +1,2 @@
-<h1> Papu vamos progresando </h1>
+<h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-<% @users.each do |user| %>
-  <h1> <%= user.email %></h1>
-<% end %>
