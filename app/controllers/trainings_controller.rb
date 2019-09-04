@@ -18,6 +18,9 @@ class TrainingsController < ApplicationController
 
   def editor_menu
     @header_title = 'Trainings editor'
+    company = current_user.company
+
+    @trainings = company.trainings
   end
 
   def editor
