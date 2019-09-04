@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   scope '/trainings' do
     get 'new' => 'trainings#new', as: :trainings
+    get 'editor' => 'trainings#editor_menu', as: :trainings_editor_menu
+    get 'editor/:training_id' => 'trainings#editor', as: :training_editor
     post 'new' => 'trainings#create', as: :create_training
   end
 
