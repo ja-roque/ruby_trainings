@@ -1,1 +1,15 @@
-Menu
+
+<div class="trainings-editor-container">
+  <div class="cards-container">
+    <% @trainings.each do |training| %>
+      <div class="card">
+        <div class="card-header">
+          <%= link_to training.name, {controller: "trainings", action: "editor", training_id: training.id}, {class: 'card-title'} %>
+        </div>
+        <div class="card-body">
+          <button type="button" class="btn btn-primary total_lessons btn-sm">Lessons: <%= training.lessons.count %></button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
