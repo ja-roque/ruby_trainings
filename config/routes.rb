@@ -3,9 +3,14 @@ Rails.application.routes.draw do
 
   scope '/trainings' do
     get 'new' => 'trainings#new', as: :trainings
-    get 'editor' => 'trainings#editor_menu', as: :trainings_editor_menu
-    get 'editor/:training_id' => 'trainings#editor', as: :training_editor
     post 'new' => 'trainings#create', as: :create_training
+    get '' => 'trainings#list', as: :trainings_list
+    get ':training_id' => 'trainings#menu', as: :training_editor
+
+    scope '/:training_id' do
+      get 'lessons' => 'lessons#new', as: :lessons
+    end
+
   end
 
   root :to => 'welcome#index'

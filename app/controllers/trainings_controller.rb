@@ -16,14 +16,14 @@ class TrainingsController < ApplicationController
     end
   end
 
-  def editor_menu
-    @header_title = 'Trainings editor'
+  def list
+    @header_title = 'Trainings List'
     company = current_user.company
 
     @trainings = company.trainings
   end
 
-  def editor
+  def menu
     company = current_user.company
     @training = company.trainings.find params[:training_id]
   end
