@@ -3149,3 +3149,1308 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 318ms (Views: 147.5ms | ActiveRecord: 166.1ms)
 
 
+Started GET "/" for ::1 at 2019-09-11 20:28:56 -0600
+  [1m[35m (80.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-09-11 20:28:58 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (19.6ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 1756ms (Views: 1197.2ms | ActiveRecord: 547.6ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-09-11 20:29:23 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GHOT0tyPm2ENJhQir2aFJUWfTMimVMO2fncBp28a/vmdCAstHQ5bEcSDjxCJ86hlq4kRvxicQTEwWyK3Jbuj7g==", "user"=>{"email"=>"elcheleoficial@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (64.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "elcheleoficial@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 303ms (ActiveRecord: 121.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GHOT0tyPm2ENJhQir2aFJUWfTMimVMO2fncBp28a/vmdCAstHQ5bEcSDjxCJ86hlq4kRvxicQTEwWyK3Jbuj7g==", "user"=>{"email"=>"elcheleoficial@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_side_bar.html.erb (0.5ms)
+  Rendered layouts/_top_bar.html.erb (0.6ms)
+Completed 200 OK in 167ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-09-11 20:29:53 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Grl7gxl0gr8FZx8/0A/ypQ2bvbXzmjSAQYTrLWM3aOCfwuN82PVCz8zChA32mt/l443gwk1StgcPqMg9KZY19w==", "user"=>{"email"=>"elcheleoficial@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (61.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "elcheleoficial@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 61.1ms)
+
+
+Started GET "/" for ::1 at 2019-09-11 20:29:54 -0600
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (346.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 845ms (Views: 51.6ms | ActiveRecord: 346.8ms)
+
+
+Started GET "/trainings" for ::1 at 2019-09-11 20:30:10 -0600
+Processing by TrainingsController#list as HTML
+  [1m[36mUser Load (58.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (1173.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (66.3ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (68.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (57.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (465.4ms)
+  Rendered layouts/_side_bar.html.erb (0.8ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 2104ms (Views: 141.9ms | ActiveRecord: 1847.4ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:30:21 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (62.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (58.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (430.9ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (62.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (59.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (557.1ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 732ms (Views: 53.1ms | ActiveRecord: 673.8ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:30:28 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (77.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (58.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (57.3ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (62.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (78.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (203.0ms)
+  Rendered layouts/_side_bar.html.erb (0.8ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 391ms (Views: 51.6ms | ActiveRecord: 334.1ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:33:11 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (74.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (62.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (65.0ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (342.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (61.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (473.4ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 679ms (Views: 67.1ms | ActiveRecord: 606.4ms)
+
+
+Started GET "/trainings/editor" for ::1 at 2019-09-11 20:33:57 -0600
+Processing by TrainingsController#menu as HTML
+  Parameters: {"training_id"=>"editor"}
+  [1m[36mUser Load (64.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (59.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (55.9ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+Completed 404 Not Found in 241ms (ActiveRecord: 179.7ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Training with 'id'=editor [WHERE "trainings"."company_id" = $1]:
+  app/controllers/trainings_controller.rb:28:in `menu'
+
+Started POST "/__better_errors/7b8251274b25754d/variables" for ::1 at 2019-09-11 20:33:58 -0600
+Started GET "/trainings" for ::1 at 2019-09-11 20:34:01 -0600
+Processing by TrainingsController#list as HTML
+  [1m[36mUser Load (60.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (77.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (318.7ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (59.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (56.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (440.5ms)
+  Rendered layouts/_side_bar.html.erb (0.8ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 651ms (Views: 65.7ms | ActiveRecord: 572.9ms)
+
+
+Started GET "/trainings" for ::1 at 2019-09-11 20:37:56 -0600
+Processing by TrainingsController#list as HTML
+  [1m[36mUser Load (56.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (64.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (60.3ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (58.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (64.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (391.3ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 1316ms (Views: 100.3ms | ActiveRecord: 1173.9ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:38:00 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (60.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (60.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (57.9ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (60.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (63.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (187.5ms)
+  Rendered layouts/_side_bar.html.erb (0.8ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 376ms (Views: 66.7ms | ActiveRecord: 303.5ms)
+
+
+Started GET "/trainings/new" for ::1 at 2019-09-11 20:39:52 -0600
+Processing by TrainingsController#new as HTML
+  Rendering trainings/new.html.erb within layouts/application
+  Rendered trainings/_new_training_form.html.erb (1.2ms)
+  Rendered trainings/new.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (57.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_side_bar.html.erb:1
+  Rendered layouts/_side_bar.html.erb (210.7ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 482ms (Views: 96.9ms | ActiveRecord: 367.0ms)
+
+
+Started GET "/trainings" for ::1 at 2019-09-11 20:40:12 -0600
+Processing by TrainingsController#list as HTML
+  [1m[36mUser Load (59.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (574.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (54.2ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (61.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (69.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (272.6ms)
+  Rendered layouts/_side_bar.html.erb (0.6ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 1104ms (Views: 66.9ms | ActiveRecord: 1005.6ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:41:32 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (57.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (59.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (53.7ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (60.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (56.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (376.5ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 1151ms (Views: 73.1ms | ActiveRecord: 1040.2ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:41:35 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (62.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (68.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (65.6ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (57.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (61.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (189.5ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.6ms)
+Completed 200 OK in 375ms (Views: 53.4ms | ActiveRecord: 316.2ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:44:38 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (62.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (63.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (58.0ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (61.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (59.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (183.1ms)
+  Rendered layouts/_side_bar.html.erb (1.0ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 386ms (Views: 75.2ms | ActiveRecord: 304.5ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:44:41 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (61.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (63.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (71.9ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (356.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (65.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (498.9ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 697ms (Views: 71.9ms | ActiveRecord: 619.5ms)
+
+
+Started GET "/trainings?training_id=5" for ::1 at 2019-09-11 20:44:42 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"5"}
+  [1m[36mUser Load (57.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (61.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (54.1ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (61.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (59.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (179.9ms)
+  Rendered layouts/_side_bar.html.erb (0.6ms)
+  Rendered layouts/_top_bar.html.erb (0.6ms)
+Completed 200 OK in 359ms (Views: 53.3ms | ActiveRecord: 293.9ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:44:44 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (62.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (66.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (74.9ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (58.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (63.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (201.3ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 384ms (Views: 51.9ms | ActiveRecord: 324.8ms)
+
+
+Started GET "/trainings?training_id=5" for ::1 at 2019-09-11 20:44:46 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"5"}
+  [1m[36mUser Load (392.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (60.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (69.0ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (57.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (63.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (195.5ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 709ms (Views: 59.2ms | ActiveRecord: 643.6ms)
+
+
+Started GET "/trainings?training_id=5" for ::1 at 2019-09-11 20:45:24 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"5"}
+  [1m[36mUser Load (69.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (59.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (61.0ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (67.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (60.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (418.2ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 954ms (Views: 84.0ms | ActiveRecord: 818.8ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:45:28 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (78.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (58.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (57.7ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (59.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (55.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (179.1ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 372ms (Views: 56.6ms | ActiveRecord: 309.1ms)
+
+
+Started GET "/trainings?training_id=5" for ::1 at 2019-09-11 20:45:31 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"5"}
+  [1m[36mUser Load (57.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (65.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (56.1ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (61.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (57.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (181.1ms)
+  Rendered layouts/_side_bar.html.erb (0.6ms)
+  Rendered layouts/_top_bar.html.erb (0.6ms)
+Completed 200 OK in 356ms (Views: 50.8ms | ActiveRecord: 298.4ms)
+
+
+Started GET "/trainings?training_id=5" for ::1 at 2019-09-11 20:46:45 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"5"}
+  [1m[36mUser Load (59.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (64.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (59.6ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (60.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (60.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (185.7ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 378ms (Views: 67.6ms | ActiveRecord: 303.7ms)
+
+
+Started GET "/trainings?training_id=5" for ::1 at 2019-09-11 20:47:13 -0600
+  [1m[35m (77.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"5"}
+  [1m[36mUser Load (64.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (67.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (64.3ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (69.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (68.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (524.4ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 1751ms (Views: 515.5ms | ActiveRecord: 1026.3ms)
+
+
+Started GET "/trainings/new" for ::1 at 2019-09-11 20:48:14 -0600
+Processing by TrainingsController#new as HTML
+  Rendering trainings/new.html.erb within layouts/application
+  Rendered trainings/_new_training_form.html.erb (16.1ms)
+  Rendered trainings/new.html.erb within layouts/application (19.2ms)
+  [1m[36mUser Load (68.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_side_bar.html.erb:1
+  Rendered layouts/_side_bar.html.erb (70.5ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 143ms (Views: 70.9ms | ActiveRecord: 68.3ms)
+
+
+Started GET "/trainings" for ::1 at 2019-09-11 20:48:21 -0600
+Processing by TrainingsController#list as HTML
+  [1m[36mUser Load (69.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (68.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (68.6ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (70.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (67.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (212.3ms)
+  Rendered layouts/_side_bar.html.erb (0.8ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 405ms (Views: 53.8ms | ActiveRecord: 344.6ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:49:44 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (74.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (70.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (69.8ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (71.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (100.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (480.5ms)
+  Rendered layouts/_side_bar.html.erb (0.6ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 1153ms (Views: 97.3ms | ActiveRecord: 1002.4ms)
+
+
+Started GET "/trainings/new" for ::1 at 2019-09-11 20:50:48 -0600
+Processing by TrainingsController#new as HTML
+  Rendering trainings/new.html.erb within layouts/application
+  Rendered trainings/_new_training_form.html.erb (1.0ms)
+  Rendered trainings/new.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (70.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_side_bar.html.erb:1
+  Rendered layouts/_side_bar.html.erb (217.3ms)
+  Rendered layouts/_top_bar.html.erb (0.5ms)
+Completed 200 OK in 493ms (Views: 58.8ms | ActiveRecord: 417.2ms)
+
+
+Started GET "/trainings" for ::1 at 2019-09-11 20:50:50 -0600
+Processing by TrainingsController#list as HTML
+  [1m[36mUser Load (87.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (71.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (63.8ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (68.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (69.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (287.2ms)
+  Rendered layouts/_side_bar.html.erb (0.5ms)
+  Rendered layouts/_top_bar.html.erb (0.5ms)
+Completed 200 OK in 661ms (Views: 67.0ms | ActiveRecord: 570.2ms)
+
+
+Started GET "/trainings?training_id=4" for ::1 at 2019-09-11 20:51:58 -0600
+Processing by TrainingsController#list as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (75.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (71.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (66.6ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (74.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (96.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (242.0ms)
+  Rendered layouts/_side_bar.html.erb (0.5ms)
+  Rendered layouts/_top_bar.html.erb (0.4ms)
+Completed 200 OK in 451ms (Views: 62.3ms | ActiveRecord: 384.3ms)
+
+
+Started GET "/trainings/4" for ::1 at 2019-09-11 20:52:00 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (89.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (71.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (63.3ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.6ms)
+Completed 200 OK in 385ms (Views: 54.0ms | ActiveRecord: 223.4ms)
+
+
+Started GET "/trainings/4" for ::1 at 2019-09-11 20:52:04 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (70.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (85.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (74.8ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_side_bar.html.erb (0.6ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 287ms (Views: 50.4ms | ActiveRecord: 230.7ms)
+
+
+Started GET "/trainings/4" for ::1 at 2019-09-11 20:56:09 -0600
+  [1m[35m (75.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"4"}
+  [1m[36mUser Load (75.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (70.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (70.7ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 1609ms (Views: 488.5ms | ActiveRecord: 824.2ms)
+
+
+  [1m[36mCompany Load (79.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (69.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "elcheleoficial@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCompany Load (67.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCompany Load (77.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", "stibies-inc"], ["LIMIT", 1]]
+  [1m[36mTraining Load (82.6ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 LIMIT $2[0m  [["company_id", 15], ["LIMIT", 11]]
+  [1m[36mTraining Load (67.6ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/trainings/new" for ::1 at 2019-09-11 21:14:46 -0600
+Processing by TrainingsController#new as HTML
+  Rendering trainings/new.html.erb within layouts/application
+  Rendered trainings/_new_training_form.html.erb (33.5ms)
+  Rendered trainings/new.html.erb within layouts/application (36.7ms)
+Started GET "/trainings/new" for ::1 at 2019-09-11 21:14:51 -0600
+Processing by TrainingsController#new as HTML
+  Rendering trainings/new.html.erb within layouts/application
+  Rendered trainings/_new_training_form.html.erb (1.2ms)
+  Rendered trainings/new.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (85.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_side_bar.html.erb:1
+  Rendered layouts/_side_bar.html.erb (504.2ms)
+  Rendered layouts/_top_bar.html.erb (0.6ms)
+Completed 200 OK in 10099ms (Views: 9661.2ms | ActiveRecord: 426.4ms)
+
+
+  [1m[36mUser Load (65.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_side_bar.html.erb:1
+  Rendered layouts/_side_bar.html.erb (217.9ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 6021ms (Views: 5881.9ms | ActiveRecord: 134.3ms)
+
+
+Started GET "/trainings/new" for ::1 at 2019-09-11 21:14:59 -0600
+Processing by TrainingsController#new as HTML
+  Rendering trainings/new.html.erb within layouts/application
+  Rendered trainings/_new_training_form.html.erb (1.3ms)
+  Rendered trainings/new.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (385.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_side_bar.html.erb:1
+  Rendered layouts/_side_bar.html.erb (388.4ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 443ms (Views: 54.5ms | ActiveRecord: 385.8ms)
+
+
+Started POST "/trainings/new" for ::1 at 2019-09-11 21:15:24 -0600
+Processing by TrainingsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oBU4Zqg/7Z74qr5CDAS0PAlBnXBjaE5n7mrnPvXxhG0E24y7u8y/INhDpsQISWR7yGXGgxcsoWFJIcCgKf+x0w==", "training"=>{"name"=>"Training 1"}, "commit"=>"Create"}
+  [1m[36mUser Load (66.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:8
+  [1m[36mCompany Load (66.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:8
+  [1m[35m (70.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trainings_controller.rb:12
+  [1m[36mTraining Create (107.9ms)[0m  [1m[32mINSERT INTO "trainings" ("name", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Training 1"], ["company_id", 15], ["created_at", "2019-09-12 03:15:25.225122"], ["updated_at", "2019-09-12 03:15:25.225122"]]
+  ↳ app/controllers/trainings_controller.rb:12
+  [1m[35m (70.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trainings_controller.rb:12
+Redirected to http://localhost:3000/trainings/6.200
+Completed 200 OK in 481ms (ActiveRecord: 381.3ms)
+
+
+Started GET "/trainings/6.200" for ::1 at 2019-09-11 21:15:25 -0600
+Processing by TrainingsController#edit_training_menu as 
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (70.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (70.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (63.9ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (27.3ms)
+Completed 500 Internal Server Error in 377ms (ActiveRecord: 204.6ms)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/trainings/edit_training_menu.html.erb:5:in `_app_views_trainings_edit_training_menu_html_erb___3802749561524391632_70272247771900'
+
+Started POST "/__better_errors/25e4d1972c138fb1/variables" for ::1 at 2019-09-11 21:15:26 -0600
+Started GET "/trainings/new" for ::1 at 2019-09-11 21:15:31 -0600
+Processing by TrainingsController#new as HTML
+  Rendering trainings/new.html.erb within layouts/application
+  Rendered trainings/_new_training_form.html.erb (1.7ms)
+  Rendered trainings/new.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (68.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_side_bar.html.erb:1
+  Rendered layouts/_side_bar.html.erb (70.7ms)
+  Rendered layouts/_top_bar.html.erb (0.6ms)
+Completed 200 OK in 151ms (Views: 74.4ms | ActiveRecord: 68.4ms)
+
+
+Started GET "/trainings" for ::1 at 2019-09-11 21:15:34 -0600
+Processing by TrainingsController#list as HTML
+  [1m[36mUser Load (74.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (73.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (62.8ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (68.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (68.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (69.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (1113.0ms)
+  Rendered layouts/_side_bar.html.erb (0.8ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 1321ms (Views: 150.4ms | ActiveRecord: 1159.0ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:15:37 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (347.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (347.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (66.9ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 786ms (ActiveRecord: 762.1ms)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/trainings/edit_training_menu.html.erb:5:in `_app_views_trainings_edit_training_menu_html_erb___3802749561524391632_70272266949420'
+
+Started POST "/__better_errors/93035a08a774276b/variables" for ::1 at 2019-09-11 21:15:38 -0600
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:16:09 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (72.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (66.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (68.6ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 237ms (ActiveRecord: 207.1ms)
+
+
+
+NoMethodError - undefined method `each' for #<Training:0x00007fd313bedf00>:
+  app/views/trainings/edit_training_menu.html.erb:5:in `_app_views_trainings_edit_training_menu_html_erb___3802749561524391632_70272273049040'
+
+Started POST "/__better_errors/efce7d31caa197e3/variables" for ::1 at 2019-09-11 21:16:11 -0600
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:16:43 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (68.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (73.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (70.7ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (64.9ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (133.5ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 416ms (Views: 129.9ms | ActiveRecord: 277.7ms)
+
+
+  [1m[36mTraining Load (69.5ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 LIMIT $2[0m  [["company_id", 15], ["LIMIT", 11]]
+  [1m[36mTraining Load (76.8ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (80.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTraining Load (67.1ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLesson Create (74.8ms)[0m  [1m[32mINSERT INTO "lessons" ("name", "training_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lesson 1"], ["training_id", 6], ["created_at", "2019-09-12 03:18:46.487835"], ["updated_at", "2019-09-12 03:18:46.487835"]]
+  [1m[35m (81.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (68.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (74.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLesson Load (78.4ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1 LIMIT $2[0m  [["training_id", 6], ["LIMIT", 11]]
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:19:21 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (80.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (69.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (71.0ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (384.7ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (909.5ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 1199ms (Views: 75.8ms | ActiveRecord: 1115.3ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:23:33 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (71.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (82.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (69.8ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (69.1ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (71.5ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.6ms)
+Completed 200 OK in 379ms (Views: 77.6ms | ActiveRecord: 292.6ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:23:47 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (67.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (72.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (71.8ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (88.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (90.3ms)
+  Rendered layouts/_side_bar.html.erb (0.8ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 372ms (Views: 62.8ms | ActiveRecord: 300.2ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:25:04 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (68.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (71.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (84.7ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (66.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (68.7ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 376ms (Views: 78.8ms | ActiveRecord: 290.3ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:25:30 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (69.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (71.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (374.1ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (402.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (404.3ms)
+  Rendered layouts/_side_bar.html.erb (1.2ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 6300ms (Views: 5374.5ms | ActiveRecord: 917.6ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:36:45 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (60.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (351.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (57.5ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (64.1ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (123.5ms)
+  Rendered layouts/_side_bar.html.erb (0.6ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 955ms (Views: 142.7ms | ActiveRecord: 614.7ms)
+
+
+  [1m[36mLesson Load (69.4ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (87.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLesson Load (69.0ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContent Create (76.9ms)[0m  [1m[32mINSERT INTO "contents" ("name", "lesson_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Content 1"], ["lesson_id", 1], ["created_at", "2019-09-12 03:42:11.694589"], ["updated_at", "2019-09-12 03:42:11.694589"]]
+  [1m[35m (81.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (77.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTraining Load (72.4ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (68.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (68.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (70.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:42:35 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (66.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (72.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (66.2ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (67.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (146.5ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_top_bar.html.erb (0.5ms)
+Completed 200 OK in 722ms (Views: 153.1ms | ActiveRecord: 347.0ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:44:43 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (67.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (73.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (70.5ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (67.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  [1m[36mContent Load (64.3ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:11
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (559.1ms)
+  Rendered layouts/_side_bar.html.erb (0.8ms)
+  Rendered layouts/_top_bar.html.erb (0.6ms)
+Completed 200 OK in 870ms (Views: 208.7ms | ActiveRecord: 651.2ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:44:55 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (67.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (87.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (71.5ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (64.1ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  [1m[36mContent Load (72.7ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:11
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (141.4ms)
+  Rendered layouts/_side_bar.html.erb (1.5ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 5592ms (Views: 5218.6ms | ActiveRecord: 363.4ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:46:21 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (86.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (70.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (434.0ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (65.1ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  [1m[36mContent Load (70.1ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:11
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (139.3ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_top_bar.html.erb (0.5ms)
+Completed 200 OK in 5837ms (Views: 5095.4ms | ActiveRecord: 725.6ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:46:39 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (69.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (67.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (68.9ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (65.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  [1m[36mContent Load (69.1ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:11
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (138.0ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.5ms)
+Completed 200 OK in 4967ms (Views: 4617.6ms | ActiveRecord: 340.4ms)
+
+
+Started GET "/trainings" for ::1 at 2019-09-11 21:48:26 -0600
+Processing by TrainingsController#list as HTML
+  [1m[36mUser Load (72.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (103.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (65.8ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (70.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (72.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (68.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (364.3ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 612ms (Views: 153.4ms | ActiveRecord: 452.1ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 21:48:29 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (82.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (78.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (71.6ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (64.7ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  [1m[36mContent Load (65.8ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:11
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (133.9ms)
+  Rendered layouts/_side_bar.html.erb (0.5ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 435ms (Views: 58.4ms | ActiveRecord: 362.8ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 22:06:28 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (62.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (60.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (141.8ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (67.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  [1m[36mContent Load (80.1ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:11
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (641.1ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.6ms)
+Completed 200 OK in 1880ms (Views: 270.1ms | ActiveRecord: 1274.3ms)
+
+
+Started GET "/trainings/6/1" for ::1 at 2019-09-11 22:06:47 -0600
+Processing by LessonsController#lesson_info as HTML
+  Parameters: {"training_id"=>"6", "lesson_id"=>"1"}
+  [1m[36mLesson Load (60.0ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:7
+Completed 406 Not Acceptable in 347ms (ActiveRecord: 60.0ms)
+
+
+
+ActionController::UnknownFormat - LessonsController#lesson_info is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/d694b183543a288e/variables" for ::1 at 2019-09-11 22:06:48 -0600
+Started GET "/trainings/6" for ::1 at 2019-09-11 22:06:53 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (63.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (61.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (59.1ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (56.7ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  [1m[36mContent Load (397.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:11
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (458.0ms)
+  Rendered layouts/_side_bar.html.erb (1.0ms)
+  Rendered layouts/_top_bar.html.erb (1.4ms)
+Completed 200 OK in 741ms (Views: 88.1ms | ActiveRecord: 638.0ms)
+
+
+Started GET "/trainings/6/1" for ::1 at 2019-09-11 22:07:49 -0600
+Processing by LessonsController#lesson_info as HTML
+  Parameters: {"training_id"=>"6", "lesson_id"=>"1"}
+  [1m[36mLesson Load (58.2ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:7
+Completed 406 Not Acceptable in 302ms (ActiveRecord: 58.2ms)
+
+
+
+ActionController::UnknownFormat - LessonsController#lesson_info is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/e15d4a1eeb11f27c/variables" for ::1 at 2019-09-11 22:07:50 -0600
+Started GET "/trainings/6" for ::1 at 2019-09-11 22:07:51 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (64.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (58.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (72.9ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (60.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  [1m[36mContent Load (58.4ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:11
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (123.5ms)
+  Rendered layouts/_side_bar.html.erb (1.1ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 396ms (Views: 73.8ms | ActiveRecord: 314.4ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 22:08:34 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (107.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (101.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (77.1ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (66.1ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  [1m[36mContent Load (332.1ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:11
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (402.2ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 744ms (Views: 51.7ms | ActiveRecord: 684.4ms)
+
+
+Started GET "/trainings/6/1" for ::1 at 2019-09-11 22:31:34 -0600
+Processing by LessonsController#lesson_info as HTML
+  Parameters: {"training_id"=>"6", "lesson_id"=>"1"}
+  [1m[36mLesson Load (121.6ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:7
+  Rendering lessons/lesson_info.html.erb within layouts/application
+  Rendered lessons/lesson_info.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (342.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_side_bar.html.erb:1
+  Rendered layouts/_side_bar.html.erb (444.7ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 872ms (Views: 174.7ms | ActiveRecord: 554.3ms)
+
+
+Started GET "/trainings/6/1" for ::1 at 2019-09-11 22:33:50 -0600
+Processing by LessonsController#lesson_info as HTML
+  Parameters: {"training_id"=>"6", "lesson_id"=>"1"}
+  [1m[36mLesson Load (64.8ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:7
+  Rendering lessons/lesson_info.html.erb within layouts/application
+  Rendered lessons/lesson_info.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (101.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_side_bar.html.erb:1
+  Rendered layouts/_side_bar.html.erb (104.5ms)
+  Rendered layouts/_top_bar.html.erb (1.9ms)
+Completed 200 OK in 260ms (Views: 88.2ms | ActiveRecord: 166.6ms)
+
+
+Started GET "/trainings" for ::1 at 2019-09-11 22:44:52 -0600
+Processing by TrainingsController#list as HTML
+  [1m[36mUser Load (62.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (160.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (166.0ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (131.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (167.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (176.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (792.9ms)
+  Rendered layouts/_side_bar.html.erb (1.4ms)
+  Rendered layouts/_top_bar.html.erb (1.2ms)
+Completed 200 OK in 1377ms (Views: 259.4ms | ActiveRecord: 935.9ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 22:45:09 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (62.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (68.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (59.2ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (72.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  [1m[36mContent Load (60.7ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:11
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (263.8ms)
+  Rendered layouts/_side_bar.html.erb (0.6ms)
+  Rendered layouts/_top_bar.html.erb (0.5ms)
+Completed 200 OK in 586ms (Views: 182.9ms | ActiveRecord: 322.4ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-11 22:45:52 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (67.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mCompany Load (65.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  [1m[36mTraining Load (65.8ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:28
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (65.6ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:5
+  [1m[36mContent Load (57.3ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:11
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (126.9ms)
+  Rendered layouts/_side_bar.html.erb (1.2ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 385ms (Views: 55.8ms | ActiveRecord: 321.6ms)
+
+
+Started GET "/trainings/6/1" for ::1 at 2019-09-11 22:50:12 -0600
+Processing by LessonsController#lesson_info as HTML
+  Parameters: {"training_id"=>"6", "lesson_id"=>"1"}
+  [1m[36mLesson Load (81.8ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:7
+  Rendering lessons/lesson_info.html.erb within layouts/application
+  Rendered lessons/lesson_info.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (58.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_side_bar.html.erb:1
+  Rendered layouts/_side_bar.html.erb (61.3ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 545ms (Views: 64.2ms | ActiveRecord: 140.4ms)
+
+
+Started GET "/trainings" for ::1 at 2019-09-11 22:54:13 -0600
+Processing by TrainingsController#list as HTML
+  [1m[36mUser Load (150.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (145.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (157.7ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (164.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (176.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (124.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (633.5ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 1018ms (Views: 92.0ms | ActiveRecord: 919.6ms)
+
+
