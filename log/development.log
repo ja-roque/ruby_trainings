@@ -3149,8 +3149,6 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 318ms (Views: 147.5ms | ActiveRecord: 166.1ms)
 
 
-<<<<<<< Updated upstream
-=======
 Started GET "/" for ::1 at 2019-09-11 20:28:56 -0600
   [1m[35m (80.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -5106,6 +5104,3 @@ Processing by TrainingsController#edit_training_menu as HTML
   Rendered layouts/_side_bar.html.erb (1.9ms)
   Rendered layouts/_top_bar.html.erb (1.1ms)
 Completed 200 OK in 8985ms (Views: 8218.1ms | ActiveRecord: 750.4ms)
-
-
->>>>>>> Stashed changes

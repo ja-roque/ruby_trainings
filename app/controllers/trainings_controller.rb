@@ -23,7 +23,7 @@ class TrainingsController < ApplicationController
     @trainings = company.trainings
   end
 
-  def menu
+  def edit_training_menu
     company = current_user.company
     @training = company.trainings.find params[:training_id]
   end

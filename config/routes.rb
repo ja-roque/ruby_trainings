@@ -5,12 +5,11 @@ Rails.application.routes.draw do
     get 'new' => 'trainings#new', as: :trainings
     post 'new' => 'trainings#create', as: :create_training
     get '' => 'trainings#list', as: :trainings_list
-    get ':training_id' => 'trainings#menu', as: :training_editor
+    get ':training_id' => 'trainings#edit_training_menu', as: :training_editor
 
     scope '/:training_id' do
-      get 'lessons' => 'lessons#new', as: :lessons
+      get ':lesson_id' => 'lessons#lesson_info', as: :lessons
     end
-
   end
 
   root :to => 'welcome#index'
