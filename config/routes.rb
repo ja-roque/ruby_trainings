@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
     scope '/:training_id' do
       get ':lesson_id' => 'lessons#lesson_info', as: :lessons
+      post 'new_lesson' => 'lessons#create', as: :create_lesson
     end
   end
 

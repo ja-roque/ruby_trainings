@@ -27,27 +27,7 @@
 }
 
 
-#edit-training-menu{
-  .lessons{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    background-color: red;
+  #new-lesson-btn{
+    min-height: 120px;
 
-    #new-lesson-btn{
-      width: 25%;
-      height: 50%;
-      text-align: center;
-    }
-
-    .card{
-      width: 30%;
-
-      .card-header{
-        color: black;
-        font-size: 1.2em;
-      }
-    }
   }
-}

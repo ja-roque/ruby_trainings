@@ -1,18 +1,10 @@
-
 <div id="edit-training-menu">
-  <div class="lessons">
-    <button class="btn btn-primary btn-group-justified" id="new-lesson-btn">New Lesson</button>
-    <% @training.lessons.each do |lesson| %>
-      <div class="card">
-        <div class="card-header">
-          <%= lesson.name %>
-        </div>
-        <ul class="list-group list-group-flush">
-          <% lesson.contents.each do |content| %>
-            <%= link_to content.name, {controller: "lessons", action: "lesson_info", lesson_id: lesson.id}, {class: 'list-group-item'} %>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <div class="lessons row">
+    <div class="col-lg-3 col-md-6 col-sm-12" >
+      <button data-toggle="modal" data-target="#exampleModal" class="btn btn-primary w-100" id="new-lesson-btn"><i class="fas fa-plus-square fa-2x text-gray-300"></i> <br>New Lesson </button>
+    </div>
+
+    <%= render partial: 'lesson_card', collection: @training.lessons, as: :lesson  %>
+    <%= render 'new_lesson_modal' %>
   </div>
 </div>
