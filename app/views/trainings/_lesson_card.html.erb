@@ -1,10 +1,13 @@
-<div class="card col-lg-3 col-md-6 col-sm-12">
-  <div class="card-header">
-  <%= lesson.name %>
-</div>
-<ul class="list-group list-group-flush">
+<div class="col-lg-3 col-md-6 col-sm-12">
+<ul class="list-group list-unstyled pb-2 text-center">
+  <div class="card-header list-group-item list-group-item-title">
+    <%= lesson.name %>
+  </div>
   <% lesson.contents.each do |content| %>
-    <%= link_to content.name, {controller: "lessons", action: "lesson_info", lesson_id: lesson.id}, {class: 'list-group-item'} %>
+    <li class="list-group-item "><%= link_to content.name, {controller: "lessons", action: "lesson_info", lesson_id: lesson.id}, {class: 'list-group-item'} %></li>
   <% end %>
+  <a href="#" data-toggle="modal" data-target="#newContentModal<%= lesson.id %>" class="list-group-item list-group-item-info list-group-item-action">Create new content<i class="fas fa-plus-square fa-2x text-white float-right"></i></a>
 </ul>
 </div>
+
+<%= render partial: 'new_content_modal', locals: {lesson_id: lesson.id} %>

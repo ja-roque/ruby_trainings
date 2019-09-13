@@ -1,0 +1,23 @@
+<div class="modal fade" id="newContentModal<%= lesson_id %>" tabindex="-1" role="dialog" aria-labelledby="newContentModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create new content</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_with(url: create_content_path, html: { method: :post }) do |f| %>
+        <div class="modal-body">
+          <%= hidden_field_tag 'lesson_id', lesson_id %>
+          <%= f.label :type_of_content, 'What type of content will you add?' %> <br>
+          <%= f.select 'type_of_content', options_for_select(@types_of_content) %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "Create", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
