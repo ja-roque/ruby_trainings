@@ -19,7 +19,6 @@ class TrainingsController < ApplicationController
   def list
     @header_title = 'Trainings List'
     company = current_user.company
-
     @trainings = company.trainings
   end
 

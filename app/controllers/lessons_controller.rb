@@ -5,7 +5,6 @@ class LessonsController < ApplicationController
 
   def lesson_info
     @lesson = Lesson.find_by_id params[:lesson_id]
-
   end
 
   def create

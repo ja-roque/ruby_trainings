@@ -8,9 +8,10 @@ Rails.application.routes.draw do
     get ':training_id' => 'trainings#edit_training_menu', as: :training_editor
 
     scope '/:training_id' do
-      get ':lesson_id' => 'lessons#lesson_info', as: :lessons
       post 'new_lesson' => 'lessons#create', as: :create_lesson
+      get 'lesson/:lesson_id' => 'lessons#lesson_info', as: :lessons
       post 'new_content' => 'contents#create', as: :create_content
+      get 'lesson/:lesson_id/content/:content_id' => 'contents#content_info', as: :content_info
     end
   end
 
