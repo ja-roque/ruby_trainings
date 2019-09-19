@@ -1,4 +1,4 @@
 class Content < ApplicationRecord
   belongs_to :lesson
-  has_many :content_data
+  has_many :slideshows
 end

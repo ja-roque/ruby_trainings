@@ -1,4 +1,4 @@
 class Slideshow < ApplicationRecord
-  belongs_to :content_datum
+  belongs_to :content
   has_many :slides
 end

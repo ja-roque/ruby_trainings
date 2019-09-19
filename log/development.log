@@ -5104,3 +5104,276 @@ Processing by TrainingsController#edit_training_menu as HTML
   Rendered layouts/_side_bar.html.erb (1.9ms)
   Rendered layouts/_top_bar.html.erb (1.1ms)
 Completed 200 OK in 8985ms (Views: 8218.1ms | ActiveRecord: 750.4ms)
+  [1m[35m (110.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (217.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (232.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/bin/rake:23
+Started GET "/" for ::1 at 2019-09-18 22:49:19 -0600
+  [1m[35m (74.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (77.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/josuerivera/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_side_bar.html.erb (0.6ms)
+  Rendered layouts/_top_bar.html.erb (0.7ms)
+Completed 200 OK in 1049ms (Views: 540.4ms | ActiveRecord: 398.9ms)
+
+
+Started GET "/trainings" for ::1 at 2019-09-18 22:49:26 -0600
+Processing by TrainingsController#list as HTML
+  [1m[36mUser Load (74.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  [1m[36mCompany Load (71.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:21
+  Rendering trainings/list.html.erb within layouts/application
+  [1m[36mTraining Load (76.4ms)[0m  [1m[34mSELECT "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1[0m  [["company_id", 15]]
+  ↳ app/views/trainings/list.html.erb:4
+  [1m[35m (71.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 4]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (75.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 5]]
+  ↳ app/views/trainings/list.html.erb:10
+  [1m[35m (85.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/list.html.erb:10
+  Rendered trainings/list.html.erb within layouts/application (644.0ms)
+  Rendered layouts/_side_bar.html.erb (0.5ms)
+  Rendered layouts/_top_bar.html.erb (0.4ms)
+Completed 200 OK in 1100ms (Views: 140.0ms | ActiveRecord: 846.0ms)
+
+
+Started GET "/trainings/6" for ::1 at 2019-09-18 22:49:29 -0600
+Processing by TrainingsController#edit_training_menu as HTML
+  Parameters: {"training_id"=>"6"}
+  [1m[36mUser Load (77.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:26
+  [1m[36mCompany Load (103.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:26
+  [1m[36mTraining Load (73.1ms)[0m  [1m[34mSELECT  "trainings".* FROM "trainings" WHERE "trainings"."company_id" = $1 AND "trainings"."id" = $2 LIMIT $3[0m  [["company_id", 15], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trainings_controller.rb:27
+  Rendering trainings/edit_training_menu.html.erb within layouts/application
+  [1m[36mLesson Load (81.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."training_id" = $1[0m  [["training_id", 6]]
+  ↳ app/views/trainings/edit_training_menu.html.erb:7
+  [1m[36mContent Load (73.9ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 1]]
+  ↳ app/views/trainings/_lesson_card.html.erb:6
+  Rendered trainings/_new_content_modal.html.erb (11.7ms)
+  [1m[36mContent Load (80.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 2]]
+  ↳ app/views/trainings/_lesson_card.html.erb:6
+  Rendered trainings/_new_content_modal.html.erb (2.3ms)
+  [1m[36mContent Load (78.7ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 3]]
+  ↳ app/views/trainings/_lesson_card.html.erb:6
+  Rendered trainings/_new_content_modal.html.erb (2.0ms)
+  [1m[36mContent Load (73.7ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 4]]
+  ↳ app/views/trainings/_lesson_card.html.erb:6
+  Rendered trainings/_new_content_modal.html.erb (2.6ms)
+  [1m[36mContent Load (75.5ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."lesson_id" = $1[0m  [["lesson_id", 6]]
+  ↳ app/views/trainings/_lesson_card.html.erb:6
+  Rendered trainings/_new_content_modal.html.erb (2.7ms)
+  Rendered collection of trainings/_lesson_card.html.erb [5 times] (693.8ms)
+  Rendered trainings/_new_lesson_modal.html.erb (2.4ms)
+  Rendered trainings/edit_training_menu.html.erb within layouts/application (969.3ms)
+  Rendered layouts/_side_bar.html.erb (0.8ms)
+  Rendered layouts/_top_bar.html.erb (0.8ms)
+Completed 200 OK in 1377ms (Views: 293.4ms | ActiveRecord: 981.7ms)
+
+
+  [1m[35m (76.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (72.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DropContentDataTable (20190919045200)
+  [1m[35m (67.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (74.5ms)[0m  [1m[35mDROP TABLE "content_data"[0m
+  ↳ db/migrate/20190919045200_drop_content_data_table.rb:3
+  [1m[35m (78.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (71.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (81.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (79.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DropContentDataTable (20190919045200)
+  [1m[35m (75.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (81.0ms)[0m  [1m[35mDROP TABLE "content_data"[0m
+  ↳ db/migrate/20190919045200_drop_content_data_table.rb:3
+  [1m[35m (74.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (73.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (70.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (73.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (69.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (70.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (69.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (66.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (68.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (66.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (74.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (88.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (76.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (78.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (72.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (65.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (70.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (67.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (70.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (69.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (75.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (73.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (70.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (74.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (73.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (70.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (76.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (73.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (73.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (74.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (71.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (73.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (159.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (74.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (83.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (69.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (67.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (70.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (72.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (114.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (66.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (74.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (93.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (73.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (76.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (75.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (74.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (102.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (67.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (72.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (79.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (66.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (89.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (75.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (74.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveContentDataRelationship (20190919045408)
+  [1m[35m (70.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (83.9ms)[0m  [1m[35mALTER TABLE "slideshows" DROP CONSTRAINT "fk_rails_1edf503b9b"[0m
+  ↳ db/migrate/20190919045408_remove_content_data_relationship.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (74.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190919045408"]]
+  ↳ bin/rails:9
+  [1m[35m (74.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (68.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (69.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (69.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (72.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (69.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (202.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (203.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DropContentDatumTable (20190919051553)
+  [1m[35m (199.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (103.0ms)[0m  [1m[35mDROP TABLE "content_datum"[0m
+  ↳ db/migrate/20190919051553_drop_content_datum_table.rb:3
+  [1m[35m (97.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (142.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (1126.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (914.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DropContentDatumTable (20190919051553)
+  [1m[35m (910.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (964.4ms)[0m  [1m[35mDROP TABLE "content_data"[0m
+  ↳ db/migrate/20190919051553_drop_content_datum_table.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1082.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190919051553"]]
+  ↳ bin/rails:9
+  [1m[35m (1082.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1127.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (1056.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1122.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1125.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2886191983238130315)[0m
+  ↳ bin/rails:9
+  [1m[35m (1092.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
