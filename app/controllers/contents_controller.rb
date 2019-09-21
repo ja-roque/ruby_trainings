@@ -15,6 +15,10 @@ class ContentsController < ApplicationController
   def content_info
     training = current_user.company.trainings.find params[:training_id]
     @lesson = training.lessons.find params[:lesson_id]
-    @lesson.contents.find params[:content_id]
+    @content = @lesson.contents.find params[:content_id]
+  end
+
+  def upload_ppt
+    Docsplit.extract_images(paramsp[])
   end
 end

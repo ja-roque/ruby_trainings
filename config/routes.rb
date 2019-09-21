@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       get 'lesson/:lesson_id' => 'lessons#lesson_info', as: :lessons
       post 'new_content' => 'contents#create', as: :create_content
       get 'lesson/:lesson_id/content/:content_id' => 'contents#content_info', as: :content_info
+
+
+      post 'lesson/:lesson_id/content/:content_id/upload_ppt' => 'contents#upload_ppt', as: :upload_ppt
     end
   end
 
