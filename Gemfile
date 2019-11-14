@@ -13,6 +13,11 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'chart-js-rails', '~> 0.0.9'
 gem 'docsplit'
 gem 'carrierwave'
+gem 'fog-aws'
+
+gem 'sidekiq'
+gem 'sidekiq-status'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

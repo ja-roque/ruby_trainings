@@ -16,9 +16,15 @@ class ContentsController < ApplicationController
     training = current_user.company.trainings.find params[:training_id]
     @lesson = training.lessons.find params[:lesson_id]
     @content = @lesson.contents.find params[:content_id]
+    @slideshow = @content.slideshows.new
   end
 
   def upload_ppt
-    Docsplit.extract_images(paramsp[])
+    puts allowed_params
+    @slideshow = Slideshow.create!(allowed_params)
+  end
+
+  def allowed_params
+    params.require(:slideshow).permit(:bucket_url)
   end
 end

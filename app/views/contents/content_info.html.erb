@@ -1,10 +1,10 @@
 <h1><%= @content.category %></h1>
+<%= form_for :slideshow, url: upload_ppt_path, multipart: true do |f| %>
+  <%= f.file_field :bucket_url%>
+  <%= f.submit "Upload" %>
+<% end %>
 <div class="lessons row">
   <div class="col-lg-3 col-md-6 col-sm-12" >
     <button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-warning w-100 dashed_slide" id="new-lesson-btn"><i class="fas fa-puzzle-piece"></i> <br>New Slide</button>
   </div>
 </div>
-
-<%= form_with(url: upload_ppt_path, html: { method: :post, id: 'ppt-uploader-form' }) do |f| %>
-  <%= form.file_field :ppt %>
-<% end %>
