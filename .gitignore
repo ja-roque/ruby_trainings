@@ -54,3 +54,7 @@ build-iPhoneSimulator/
 log/development.log
 
 *.pptx
+
+log/
+
+.DS_Store

@@ -3,6 +3,12 @@
   <%= f.file_field :bucket_url%>
   <%= f.submit "Upload" %>
 <% end %>
+
+<% if @content.slideshows %>
+  <div>
+    <span> Current uploaded PPT: <%= @content.slideshows.first.bucket_url.file.path.split('/').last %></span>
+  </div>
+<% end %>
 <div class="lessons row">
   <div class="col-lg-3 col-md-6 col-sm-12" >
     <button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-warning w-100 dashed_slide" id="new-lesson-btn"><i class="fas fa-puzzle-piece"></i> <br>New Slide</button>

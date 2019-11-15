@@ -18,6 +18,8 @@ gem 'fog-aws'
 gem 'sidekiq'
 gem 'sidekiq-status'
 
+gem 'down'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
