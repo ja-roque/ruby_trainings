@@ -12,8 +12,8 @@ class Slideshow < ApplicationRecord
   end
 
   def to_pdf
-    output_path = "#{Rails.root}/ppt/#{name || 'test'}/pdf"
-    downloaded_slideshow = download_slideshow.to_path
+    downloaded_slideshow = download_slideshow
+    output_path = "#{Rails.root}/ppt/#{name || downloaded_slideshow.original_filename}/pdf"
     Docsplit.extract_pdf downloaded_slideshow, output: output_path
     Dir["#{output_path}/*.pdf"].first
   end
