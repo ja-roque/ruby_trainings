@@ -4,4 +4,7 @@ class Slide < ApplicationRecord
   has_many :slide_images
   has_many :slide_videos
   has_many :slide_texts
+
+  mount_uploader :img_url, SlideUploader
+  serialize :img_url, JSON
 end
