@@ -12,6 +12,7 @@
 .idea/
 /.idea/
 .log/
+workspace.xml
 
 # Used by dotenv library to load environment variables.
 # .env

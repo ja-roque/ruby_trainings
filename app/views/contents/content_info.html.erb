@@ -1,17 +1,24 @@
 <h1><%= @content.category %></h1>
-<%= form_for :slideshow, url: upload_ppt_path, multipart: true do |f| %>
+<%= form_for @new_slideshow, url: upload_ppt_path, multipart: true do |f| %>
   <%= f.file_field :bucket_url%>
+  <%= f.hidden_field :content_id, value: @content.id%>
   <%= f.submit "Upload" %>
 <% end %>
 
-<% if @content.slideshows %>
+<% if @slideshow %>
   <div>
-    <span> Current uploaded PPT: <%= @content.slideshows.first&.bucket_url&.file&.path&.split('/')&.last %></span>
+    <span> Current uploaded PPT: <%= @slideshow&.bucket_url&.file&.path&.split('/')&.last %></span>
   </div>
+  <% unless @slideshow.slides.present? %>
+    <%= form_with url: split_ppt_path, method: 'post' do |f|%>
+      <%= f.hidden_field :slideshow_id, value: @slideshow.id%>
+      <button type="submit" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-success w-100 dashed_slide" id="new-lesson-btn"><i class="fas fa-clone"></i> <br>Split slideshow into slides!</button>
+    <% end %>
+  <% end %>
 <% end %>
 <div class="lessons row ">
   <div class="col-lg-3 col-md-6 col-sm-12 mt-5" >
     <button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-warning w-100 dashed_slide" id="new-lesson-btn"><i class="fas fa-puzzle-piece"></i> <br>New Slide</button>
   </div>
-  <%= render partial: 'slide_thumbnail', collection: @content.slideshows.first.slides, as: :slide %>
+  <%= render partial: 'slide_thumbnail', collection: @slideshow&.slides, as: :slide %>
 </div>
