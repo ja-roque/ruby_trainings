@@ -1,4 +1,31 @@
-<form …>
+<script>
+    Trix.config.blockAttributes.textTitle = { tagName: "text-title", nestable: true }
+    Trix.config.blockAttributes.frag = { tagName: "frag", nestable: true }
+
+    addEventListener("trix-initialize", event => {
+        const titleButtonHTML  = '<button type="button" class="trix-button" data-trix-attribute="textTitle" title="Slide Title">TITLE</button>'
+        const fragButtonHTML  = '<button type="button" class="trix-button" data-trix-attribute="frag" title="Slide Title">FRAGMENT</button>'
+        const groupElement = event.target.toolbarElement.querySelector(".trix-button-group--block-tools")
+        groupElement.insertAdjacentHTML("beforeend", titleButtonHTML)
+        groupElement.insertAdjacentHTML("beforeend", fragButtonHTML)
+    })
+
+</script>
+<style>
+  .trix-content text-title {
+    font-size: 26px;
+    background-color: yellow;
+    display: block;
+  }
+
+  .trix-content frag {
+    font-size: 15px;
+    background-color: #a3b6ee;
+    display: block;
+  }
+</style>
+
+<form>
   <input id="x" type="hidden" name="content">
-  <trix-editor input="Soy loco con el texto"></trix-editor>
+  <trix-editor class="trix-content" input="x"></trix-editor>
 </form>

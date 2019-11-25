@@ -1,2 +1,3 @@
 <h1><%= @content.category %></h1>
-<%= render partial: 'slideshow_manager' if @slideshow %>
+<%= render partial: 'slideshow_manager' if @content.category == 'slideshow' %>
+<%= render partial: 'text_manager' if @content.category == 'text' %>
