@@ -18,6 +18,7 @@ class ContentsController < ApplicationController
     @content = @lesson.contents.find params[:content_id]
     @slideshow = @content.slideshows.first
     @new_slideshow = @content.slideshows.new
+    @slide_text = SlideText.new
   end
 
   def upload_ppt
@@ -31,6 +32,10 @@ class ContentsController < ApplicationController
     slideshow_to_split.generate_slides_from_jpg_dir jpgs_path
 
     redirect_to content_info_path
+  end
+
+  def submit_text_manager
+
   end
 
   def allowed_params

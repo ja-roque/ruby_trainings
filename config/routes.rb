@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
       post 'lesson/:lesson_id/content/:content_id/upload_ppt' => 'contents#upload_ppt', as: :upload_ppt
       post 'lesson/:lesson_id/content/:content_id/split_ppt' => 'contents#split_ppt', as: :split_ppt
+      post 'lesson/:lesson_id/content/:content_id/text' => 'contents#submit_text_manager', as: :submit_text_manager
     end
   end
 

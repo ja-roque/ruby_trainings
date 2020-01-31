@@ -7,6 +7,9 @@ class Slideshow < ApplicationRecord
   mount_uploader :bucket_url, SlideshowUploader
   serialize :bucket_url, JSON
 
+  # ==================
+  # For PPT Slideshows
+  # ==================
   def download_slideshow
     Down.download bucket_url.url
   end
@@ -33,6 +36,14 @@ class Slideshow < ApplicationRecord
       slides.create img_url: image_file
       image_file.close
     end
+  end
+
+  # ==================
+  # For Text Slideshows
+  # ==================
+
+  def get_title_from_slide_text(slide_text)
+
   end
 
   private

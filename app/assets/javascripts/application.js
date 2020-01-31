@@ -18,5 +18,4 @@
 //= require bootstrap
 //= require sb-admin-2
 //= require all
-//= require trix
 //= require_tree .
